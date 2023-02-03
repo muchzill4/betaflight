@@ -63,7 +63,7 @@
 #include "sensors/battery.h"
 #include "sensors/sensors.h"
 
-const char CRASH_FLIP_WARNING[] = "> CRASH FLIP <";
+const char CRASH_FLIP_WARNING[] = "> TABLE FLIP <";
 
 void renderOsdWarning(char *warningText, bool *blinking, uint8_t *displayAttr)
 {
@@ -140,7 +140,7 @@ void renderOsdWarning(char *warningText, bool *blinking, uint8_t *displayAttr)
             *displayAttr = DISPLAYPORT_ATTR_INFO;
             return;
         } else if (!ARMING_FLAG(ARMED)) { // if disarmed, but crash flip mode is activated
-            tfp_sprintf(warningText, "CRASH FLIP SWITCH");
+            tfp_sprintf(warningText, "TABLE FLIP SWITCH");
             *displayAttr = DISPLAYPORT_ATTR_INFO;
             return;
         }
