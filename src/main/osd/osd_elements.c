@@ -765,7 +765,7 @@ static void osdElementAverageCellVoltage(osdElementParms_t *element)
         break;
     }
 
-    osdPrintFloat(element->buff, osdGetBatterySymbol(cellV), cellV / 100.0f, "", 2, false, SYM_VOLT);
+    osdPrintFloat(element->buff, osdGetBatterySymbol(cellV), cellV / 100.0f, "", 1, false, SYM_VOLT);
 }
 
 static void osdElementCompassBar(osdElementParms_t *element)
@@ -1157,8 +1157,7 @@ static void osdElementLinkQuality(osdElementParms_t *element)
 
     if (linkQualitySource == LQ_SOURCE_RX_PROTOCOL_CRSF) { // 0-99
         osdLinkQuality = rxGetLinkQuality();
-        const uint8_t osdRfMode = rxGetRfMode();
-        tfp_sprintf(element->buff, "%c%1d:%2d", SYM_LINK_QUALITY, osdRfMode, osdLinkQuality);
+        tfp_sprintf(element->buff, "%c%2d", SYM_LINK_QUALITY, osdLinkQuality);
     } else if (linkQualitySource == LQ_SOURCE_RX_PROTOCOL_GHST) { // 0-100
         osdLinkQuality = rxGetLinkQuality();
         tfp_sprintf(element->buff, "%c%2d", SYM_LINK_QUALITY, osdLinkQuality);
