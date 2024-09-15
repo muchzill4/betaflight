@@ -1196,7 +1196,7 @@ static timeDelta_t osdShowArmed(void)
     } else {
         ret = (REFRESH_1S / 2);
     }
-    displayWrite(osdDisplayPort, midCol - (strlen("ARMED") / 2), midRow, DISPLAYPORT_SEVERITY_NORMAL, "ARMED");
+    displayWrite(osdDisplayPort, midCol - (strlen("\\O/") / 2), midRow, DISPLAYPORT_SEVERITY_NORMAL, "\\O/");
 
     if (isFlipOverAfterCrashActive()) {
         displayWrite(osdDisplayPort, midCol - (strlen(CRASH_FLIP_WARNING) / 2), midRow + 1, DISPLAYPORT_SEVERITY_NORMAL, CRASH_FLIP_WARNING);
