@@ -68,7 +68,7 @@
 #include "sensors/battery.h"
 #include "sensors/sensors.h"
 
-const char CRASHFLIP_WARNING[] = ">CRASH FLIP<";
+const char CRASHFLIP_WARNING[] = ">TABLE FLIP<";
 
 #if defined(USE_ESC_SENSOR) || (defined(USE_DSHOT) && defined(USE_DSHOT_TELEMETRY))
 // ESC alarm character constants
@@ -279,7 +279,7 @@ void renderOsdWarning(char *warningText, bool *blinking, uint8_t *displayAttr)
             *displayAttr = DISPLAYPORT_SEVERITY_WARNING;
             return;
         } else if (!ARMING_FLAG(ARMED)) { // if disarmed, but crashflip mode is activated (not allowed / can't happen)
-            tfp_sprintf(warningText, "CRASHFLIP SW");
+            tfp_sprintf(warningText, "TABLEFLIP SW");
             *displayAttr = DISPLAYPORT_SEVERITY_INFO;
             return;
         }
